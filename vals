@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d6336c;
+            margin: 0;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 28px;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+        }
+        .hidden {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine? <span class="heart">❤️</span></h1>
+        <div class="buttons">
+            <button class="yes" onclick="showMessage()">Yes!</button>
+            <button class="no" onclick="moveButton(this)">No</button>
+        </div>
+        <p id="message" class="hidden">Yay! Can't wait to celebrate together! ❤️</p>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById("message").classList.remove("hidden");
+        }
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - 200);
+            let y = Math.random() * (window.innerHeight - 100);
+            button.style.position = "absolute";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
